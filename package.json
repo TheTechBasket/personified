@@ -1,0 +1,47 @@
+{
+	"name": "personified",
+	"version": "1.0.0",
+	"description": "315 free AI avatar photos with ready personas (name, country, age, gender, skin tone, mood, hair) for mockups, demo data and placeholders. Fully typed.",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./index.d.ts",
+			"default": "./index.js"
+		},
+		"./index.json": "./index.json",
+		"./img/*": "./img/*"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"index.json",
+		"img",
+		"llms.txt",
+		"LICENSE.md",
+		"LICENSE-MIT"
+	],
+	"keywords": [
+		"avatar",
+		"avatars",
+		"placeholder",
+		"persona",
+		"mock data",
+		"fake users",
+		"profile picture",
+		"ai faces",
+		"typescript",
+		"seed data",
+		"llms.txt"
+	],
+	"homepage": "https://allsvgicons.com/personified-free-avatars/",
+	"author": "All SVG Icons <hi@allsvgicons.com>",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"sideEffects": false,
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TheTechBasket/personified.git"
+	},
+	"bugs": {
+		"url": "https://github.com/TheTechBasket/personified/issues"
+	}
+}

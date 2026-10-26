@@ -1,0 +1,69 @@
+# personified
+
+> npm package: 315 AI-generated avatar photos (WebP, square) with persona data (name, country, region, age, gender, skin tone, mood, hair, backdrop, traits, alt text). None of the people exist. Use for mockups, demo data, seed users, placeholders, design comps. Zero dependencies, ESM only, fully typed.
+
+## Install
+
+npm i personified
+
+## API (exact signatures, see index.d.ts for every literal type)
+
+- `avatars: readonly Avatar[]`: all 315, sorted by id.
+- `find(options?: FindOptions): Avatar[]`: avatars matching every option given. Empty array when nothing matches.
+- `pick(seed: string, options?: FindOptions): Avatar | undefined`: deterministic. Same seed and options always return the same avatar. `undefined` only when `options` match nothing.
+- `file(id: AvatarId, px?: 512 | 256 | 128): string`: image URL. Node: a `file:` URL. Vite, webpack and other bundlers: an asset URL. Default px is 512.
+- Direct imports: `personified/img/<px>/<id>.webp`, `personified/index.json` (plain data, same as `avatars`).
+
+Avatar fields: id, person, name, country, region, gender, age, band, skin, mood, expression, hair {color, length, style}, backdrop, traits[], alt.
+
+## Valid values
+
+- region: Africa, Americas, Central Asia, East Asia, Europe, Middle East, Oceania, South Asia, Southeast Asia
+- country: 153 country names, union type `Country` in index.d.ts. Use the English short name, for example India, Brazil, United States.
+- gender: w (woman), m (man), x (non-binary or unspecified)
+- band (age band): 18-29, 30-44, 45-59, 60+
+- skin: 1 (lightest) to 5 (darkest), or a range [min, max]
+- mood: laugh, neutral, smile, surprised, thoughtful, wink
+- hair.color: black, blonde, brown, dyed, grey, hidden, red
+- hair.length: bald, hidden, long, medium, short
+- hair.style: braids, bun, coily, curly, locs, none, straight, wavy
+- backdrop: plain-light, plain-dark, color, outdoor, indoor
+- trait: Down syndrome, albinism, beard, freckles, glasses, hat, hearing aid, hijab, jewelry, moustache, stubble, turban, vitiligo
+- person: an AvatarId; returns every mood of that one face
+
+Invalid values are TypeScript errors. In plain JS, an unknown value matches nothing (empty array), it does not throw.
+
+## Recipes
+
+Stable avatar per user:
+  const a = pick(user.email); img.src = file(a.id, 128); img.alt = a.alt;
+
+Diverse seed users:
+  const team = ['Africa','Europe','South Asia','Americas'].map((region) => find({ region })[0]);
+
+Same person, different moods (for a status UI):
+  const moods = find({ person: '0001' });
+
+Filter by look:
+  find({ hair: { color: 'grey' }, band: '60+', backdrop: 'plain-light' });
+
+Always set `alt` from the `alt` field. Prefer 128 px for lists, 256 for cards, 512 for hero or profile pages.
+
+## Rules for agents
+
+- Do: use these faces for UI mockups, placeholders, demo and seed data, tests, design comps, in personal and commercial products. No credit needed.
+- Do not present a face as a real person: no fake reviews, testimonials, staff pages, dating or social profiles, or anything that could deceive someone.
+- Do not copy the images into another package, icon or asset library, or resell or redistribute them as files.
+- Ids are permanent. Hard-code an id when a design needs one exact face; it will not change in later versions.
+- Do not hotlink or invent image URLs. Use `file()` or the package import paths.
+
+## License
+
+- Code (index.js, index.d.ts): MIT, see LICENSE-MIT.
+- Images and data (img/, index.json): Free Asset License, see LICENSE.md. Online: https://allsvgicons.com/free-assets-license/
+- Questions: hi@allsvgicons.com
+
+## Links
+
+- Browse the faces: https://allsvgicons.com/personified-free-avatars/
+- Source: https://github.com/TheTechBasket/personified
