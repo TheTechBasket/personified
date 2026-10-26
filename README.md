@@ -61,3 +61,7 @@ Browse all faces: https://allsvgicons.com/personified-free-avatars/
 ## Contributing
 
 Issues and pull requests for the code are welcome. New faces come from the All SVG Icons team. See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+
+---
+
+By [All SVG Icons](https://allsvgicons.com/): free SVG icons, logo maker and design tools.

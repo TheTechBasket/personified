@@ -34,7 +34,11 @@
 		"llms.txt"
 	],
 	"homepage": "https://allsvgicons.com/personified-free-avatars/",
-	"author": "All SVG Icons <hi@allsvgicons.com>",
+	"author": {
+		"name": "All SVG Icons",
+		"email": "hi@allsvgicons.com",
+		"url": "https://allsvgicons.com/"
+	},
 	"license": "SEE LICENSE IN LICENSE.md",
 	"sideEffects": false,
 	"repository": {
