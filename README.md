@@ -1,8 +1,12 @@
 # Personified
 
+<p align="center"><img src=".github/faces.webp" alt="Twelve Personified avatars from different regions and age groups" width="760"></p>
+
 315 free AI avatar photos with ready personas, by [All SVG Icons](https://allsvgicons.com/personified-free-avatars/). Each face comes with a name, country, region, age, gender, skin tone and mood, so mockups, demo data and placeholder users look real without using real people.
 
 None of these people exist. See the license for what that means for your use.
+
+<p align="center"><a href="https://allsvgicons.com/personified-free-avatars/"><img src=".github/preview.webp" alt="Avatar detail view on allsvgicons.com: persona fields, other moods of the same person, download and copy buttons" width="720"></a></p>
 
 ## Install
 
